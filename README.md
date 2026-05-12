@@ -50,12 +50,6 @@ The application stores saved data in a file named `students.txt`.
 - `GradeBook.java` manages the list of students using `ArrayList`.
 - `FileManager.java` handles saving and loading student data.
 
-## Demonstration Video
-Video URL: 
-
-## GitHub Repository
-Repository URL: 
-
 ## Useful Websites
 - https://docs.oracle.com/en/java/
 - https://www.w3schools.com/java/
