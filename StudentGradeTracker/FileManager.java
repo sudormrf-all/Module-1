@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class FileManager {
+    // Saves all student records from the ArrayList into the specified text file.
     public static void saveStudents(String fileName, ArrayList<Student> students) throws Exception {
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 
@@ -16,6 +17,7 @@ public class FileManager {
         writer.close();
     }
 
+    // Loads student records from the specified text file into a new ArrayList.
     public static ArrayList<Student> loadStudents(String fileName) throws Exception {
         ArrayList<Student> students = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(fileName));

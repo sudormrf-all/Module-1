@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     private static final String FILE_NAME = "students.txt";
 
+    // Starts the program, creates the grade book, and keeps the menu running until the user exits.
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         GradeBook gradeBook = new GradeBook();
@@ -49,6 +50,7 @@ public class Main {
         scanner.close();
     }
 
+    // Displays the main menu options for the user.
     private static void printMenu() {
         System.out.println("Menu");
         System.out.println("1. Add student");
@@ -60,6 +62,7 @@ public class Main {
         System.out.println("7. Exit");
     }
 
+    // Handles the user flow for creating and adding a new student record.
     private static void addStudentFlow(Scanner scanner, GradeBook gradeBook) {
         System.out.print("Enter student name: ");
         String name = scanner.nextLine().trim();
@@ -76,6 +79,7 @@ public class Main {
         }
     }
 
+    // Handles the user flow for entering a grade for an existing student.
     private static void addGradeFlow(Scanner scanner, GradeBook gradeBook) {
         System.out.print("Enter student name: ");
         String name = scanner.nextLine().trim();
@@ -88,6 +92,7 @@ public class Main {
         }
     }
 
+    // Handles the user flow for removing a student from the grade book.
     private static void removeStudentFlow(Scanner scanner, GradeBook gradeBook) {
         System.out.print("Enter student name to remove: ");
         String name = scanner.nextLine().trim();
@@ -99,6 +104,7 @@ public class Main {
         }
     }
 
+    // Saves all current student records to the file used by the program.
     private static void saveFlow(GradeBook gradeBook) {
         try {
             FileManager.saveStudents(FILE_NAME, gradeBook.getStudents());
@@ -108,6 +114,7 @@ public class Main {
         }
     }
 
+    // Loads student records from the file and replaces the current in-memory list.
     private static void loadFlow(GradeBook gradeBook) {
         try {
             gradeBook.setStudents(FileManager.loadStudents(FILE_NAME));
@@ -117,6 +124,7 @@ public class Main {
         }
     }
 
+    // Reads a whole number from the user and keeps asking until the input is valid.
     private static int readInt(Scanner scanner, String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -129,6 +137,7 @@ public class Main {
         }
     }
 
+    // Reads a decimal number from the user and keeps asking until the input is valid.
     private static double readDouble(Scanner scanner, String prompt) {
         while (true) {
             System.out.print(prompt);
